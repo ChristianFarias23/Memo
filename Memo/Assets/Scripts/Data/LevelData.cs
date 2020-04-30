@@ -13,14 +13,22 @@ namespace Memo.Data
 		/// </summary>
 		public string TituloNivel;
 
+		/// <summary>
+		/// La descripcion del nivel.
+		/// </summary>
+		[Multiline]
+		public string DescripcionNivel;
+
 		public Color Color;
 
 		/// <summary>
 		/// La cantidad de tarjetas que tiene el nivel.
 		/// Debe ser un numero par.
 		/// </summary>
-		[Range(4, 30)]
-		public int CantidadTarjetas = 4;
+		[Range(3, 15)]
+		public int CantidadTarjetas = 3;
+
+		public List<Sprite> Tarjetas = new List<Sprite>();
 
 		/// <summary>
 		/// La cantidad de tarjetas trampa que tiene el nivel.
@@ -28,12 +36,6 @@ namespace Memo.Data
 		[Range(0, 3)]
 		public int CantidadTarjetasTrampa = 0;
 
-		public void OnValidate()
-		{
-			if (CantidadTarjetas%2 != 0)
-			{
-				CantidadTarjetas++;
-			}
-		}
+        public static Color NoDataColor = new Color(0.7607844F, 0.7607844F, 0.7607844F);
 	}
 }
