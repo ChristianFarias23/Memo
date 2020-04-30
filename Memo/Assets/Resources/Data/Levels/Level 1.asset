@@ -11,7 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb11f672556be444a11fa2b0ccfe48a, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  TituloNivel: Nivel 1
+  Titulo: Nivel 1
+  Subtitulo: De viaje!
   Color: {r: 1, g: 0.7647059, b: 0.07058824, a: 1}
-  CantidadTarjetas: 4
+  CantidadTarjetas: 3
+  Tarjetas:
+  - {fileID: 21300000, guid: 6e670b95b816a714a8e13b0d67ee0eb9, type: 3}
+  - {fileID: 21300000, guid: 41c60c4a9d6eaf144a977b89b5b2493b, type: 3}
+  - {fileID: 21300000, guid: d4701f1bf3d799e4998ac1b2dde9997e, type: 3}
   CantidadTarjetasTrampa: 0

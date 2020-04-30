@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb11f672556be444a11fa2b0ccfe48a, type: 3}
   m_Name: Level 5
   m_EditorClassIdentifier: 
-  TituloNivel: Nivel 5
+  Titulo: Nivel 5
+  Subtitulo: Work in progress...
   Color: {r: 1, g: 0.07058823, b: 0.31035554, a: 1}
   CantidadTarjetas: 10
+  Tarjetas: []
   CantidadTarjetasTrampa: 1

@@ -11,13 +11,13 @@ namespace Memo.Data
 		/// <summary>
 		/// El titulo del nivel.
 		/// </summary>
-		public string TituloNivel;
+		public string Titulo;
 
 		/// <summary>
 		/// La descripcion del nivel.
 		/// </summary>
 		[Multiline]
-		public string DescripcionNivel;
+		public string Subtitulo;
 
 		public Color Color;
 
