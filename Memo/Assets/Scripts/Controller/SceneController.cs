@@ -9,5 +9,10 @@ namespace Memo.Controller
         {
             SceneManager.LoadScene("LevelScene", LoadSceneMode.Single);
         }
+
+        public void LoadMainMenuScene()
+        {
+            SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
+        }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using System.Collections.Generic;
+using Memo.Controller;
 
 namespace Memo.View
 {
@@ -20,14 +21,15 @@ namespace Memo.View
         public Text CantidadTarjetas, RecordActual;
         public List<Image> PreviewTarjetas;
 
-        public void UpdateView(LevelButtonView levelButton)
+        public void UpdateView()
         {
-            if (levelButton == null || levelButton.Data == null)
+            Data = TransientController.instance.CurrentLevel;
+
+            if (Data == null)
             {
                 return;
             }
 
-            Data = levelButton.Data;
             Titulo.text = Data.Titulo;
             Subtitulo.text = Data.Subtitulo;
             CantidadTarjetas.text = string.Format("Cantidad de tarjetas: {0}", (Data.Tarjetas.Count * 2));
@@ -43,11 +45,6 @@ namespace Memo.View
             {
                 PreviewTarjetas[i].sprite = Data.Tarjetas[i] ?? null;
             }            
-        }
-
-        private void OnValidate()
-        {
-
         }
     }
 }
