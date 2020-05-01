@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Memo.Shaders
+namespace Memo.Effects
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class DropShadow : MonoBehaviour
@@ -37,8 +37,8 @@ namespace Memo.Shaders
         void LateUpdate()
         {
             //update the position and rotation of the sprite's shadow with moving sprite
-            shadowGameobject.transform.position = transform.localPosition + (Vector3)ShadowOffset;
-            shadowGameobject.transform.rotation = transform.localRotation;
+            shadowGameobject.transform.position = transform.position + (Vector3)ShadowOffset;
+            shadowGameobject.transform.rotation = transform.rotation;
         }
     }
 }
