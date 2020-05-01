@@ -644,6 +644,7 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions:
   - {fileID: 1109152076281922474}
+  - {fileID: 1109894301463448392}
   m_StateMachineTransitions:
   - first: {fileID: 1107312439536925432}
     second:
@@ -700,6 +701,22 @@ AnimatorTransition:
     m_ConditionEvent: level_open
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 1107087247633372518}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
+--- !u!1109 &1109894301463448392
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: level_selection_open
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 1107199193592504886}
   m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
