@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   Titulo: Nivel 2
-  Subtitulo: Work in progress...
+  Subtitulo: Carpinteria
   Color: {r: 1, g: 0.7647059, b: 0.07058824, a: 1}
-  CantidadTarjetas: 6
-  Tarjetas: []
+  Tarjetas:
+  - {fileID: 21300000, guid: 0a6e0c1d94b9a124da6af874862de297, type: 3}
+  - {fileID: 21300000, guid: 140042d70ccd30c4f94b1497e139bffa, type: 3}
+  - {fileID: 21300000, guid: 335340db6df59af449525cfc9abac4be, type: 3}
+  - {fileID: 21300000, guid: 5e43c8dbb9cb5de44b77de394546d003, type: 3}
   CantidadTarjetasTrampa: 0

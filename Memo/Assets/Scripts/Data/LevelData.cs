@@ -21,13 +21,6 @@ namespace Memo.Data
 
 		public Color Color;
 
-		/// <summary>
-		/// La cantidad de tarjetas que tiene el nivel.
-		/// Debe ser un numero par.
-		/// </summary>
-		[Range(3, 15)]
-		public int CantidadTarjetas = 3;
-
 		public List<Sprite> Tarjetas = new List<Sprite>();
 
 		/// <summary>

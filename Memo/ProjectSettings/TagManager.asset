@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Titulo
   - Subtitulo
+  - CantidadTarjetas
+  - RecordActual
+  - TarjetasPreview
   layers:
   - Default
   - TransparentFX
