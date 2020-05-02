@@ -14,6 +14,7 @@ namespace Memo.Controller
         public static LevelController instance;
         public LevelData Data;
 
+
         public SceneController SceneController;
 
 
@@ -21,6 +22,7 @@ namespace Memo.Controller
         public Transform TarjetasContainer;
         public List<CardPosition> TarjetasPositions;
 		public List<Card> Tarjetas = new List<Card>();
+        public Animator LevelCanvasAnimator;
 
 
         public Text PauseLevelTitle;
@@ -106,6 +108,11 @@ namespace Memo.Controller
         {
             if (flippedCard1 == null || flippedCard2 == null)
             {
+                if (!lockAllCompleted && !allCompleted)
+                {
+                    StartCoroutine(CheckAllCompleted());
+                }
+
                 return;
             }
 
@@ -165,6 +172,27 @@ namespace Memo.Controller
 
             lockCheckCompletePair = false;
         }
+        
+        bool allCompleted = false;
+        bool lockAllCompleted = false;
+        IEnumerator CheckAllCompleted()
+        {
+            lockAllCompleted = true;
+
+            var cantCompleted = Tarjetas.Count(t => t.completed == true);
+            Debug.Log(string.Format("CHECKING ALL CARDS COMPLETED... : {0} - {1}", cantCompleted, Tarjetas.Count));
+
+            if (cantCompleted == Tarjetas.Count)
+            {
+                Debug.Log("ALL CARDS COMPLETED");
+                yield return new WaitForSeconds(1f);
+                allCompleted = true;
+                LevelCanvasAnimator.SetTrigger("level_complete");
+            }            
+
+            lockAllCompleted = false;
+        }
+
 
         public void LevelStart()
         {

@@ -63,6 +63,7 @@ namespace Memo.Behaviour
         public void Complete()
         {
             Animator.SetTrigger("card_complete");
+            completed = true;
         }
     }
 }
