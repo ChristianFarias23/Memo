@@ -22,10 +22,12 @@ namespace Memo.Controller
         public Transform TarjetasContainer;
         public List<CardPosition> TarjetasPositions;
 		public List<Card> Tarjetas = new List<Card>();
+        
+        
         public Animator LevelCanvasAnimator;
-
-
         public Text PauseLevelTitle;
+        public ParticleSystem ParticleSystemCorrecto;
+        public ParticleSystem ParticleSystemIncorrecto;
 
         private void Awake()
         {
@@ -150,16 +152,16 @@ namespace Memo.Controller
             if (flippedCard1.Data.id == flippedCard2.Data.id)
             {
                 // Caso misma carta:
-                Debug.Log("COMPLETED");
                 yield return new WaitForSeconds(0.5f);
+                ParticleSystemCorrecto.Play();
                 flippedCard1.Complete();
                 flippedCard2.Complete();
             }
             else
             {
                 // Caso carta distinta:
-                Debug.Log("DISCARD, flipping");
                 yield return new WaitForSeconds(0.5f);
+                ParticleSystemIncorrecto.Play();
                 flippedCard1.Flip();
                 flippedCard2.Flip();
 
@@ -180,7 +182,6 @@ namespace Memo.Controller
             lockAllCompleted = true;
 
             var cantCompleted = Tarjetas.Count(t => t.completed == true);
-            Debug.Log(string.Format("CHECKING ALL CARDS COMPLETED... : {0} - {1}", cantCompleted, Tarjetas.Count));
 
             if (cantCompleted == Tarjetas.Count)
             {

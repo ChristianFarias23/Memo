@@ -35,13 +35,11 @@ namespace Memo.Behaviour
 
             if (completed)
             {
-                Debug.Log("Is completed");
                 return;
             }
 
             if (LevelController.instance.NotifyFlipCard(this))
             {
-                Debug.Log("Can Flip");
                 Flip();
             }
         }
