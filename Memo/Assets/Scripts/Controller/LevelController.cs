@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
+using Memo.Behaviour;
 using Memo.Data;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace Memo.Controller
 {
@@ -9,16 +12,18 @@ namespace Memo.Controller
     {
         public LevelData Data;
 
+        public SceneController SceneController;
 
-        public SpriteRenderer TarjetaPrefab;
+
+        public Card TarjetaPrefab;
         public Transform TarjetasContainer;
-        public List<Transform> TarjetasPositions;
-		public List<SpriteRenderer> Tarjetas = new List<SpriteRenderer>();
+        public List<CardPosition> TarjetasPositions;
+		public List<Card> Tarjetas = new List<Card>();
 
 
         public Text PauseLevelTitle;
 
-        private void Awake()
+        private void Start()
         {
             Data = TransientController.instance.CurrentLevel;
 
@@ -31,17 +36,68 @@ namespace Memo.Controller
 
             for (int i = 0; i < Data.Tarjetas.Count; i++)
             {
-                var tarjeta = Instantiate(TarjetaPrefab, Vector3.zero, Quaternion.identity, TarjetasContainer);
-                Tarjetas.Add(tarjeta);
-                tarjeta.transform.position = TarjetasPositions[i].position;
+                try
+                {
+                    Tarjetas.Add(InitiateTarjeta(i));
+                    Tarjetas.Add(InitiateTarjeta(i));
+                }
+                catch (UnityException)
+                {
+                    // No hay mas espacios disponibles.
+                    // Volver al menu principal.
+                    TransientController.instance.CurrentLevel = null;
+                    SceneController.LoadMainMenuScene();
+                }
             }
-
-
         }
 
-        private void Update()
+        private Card InitiateTarjeta(int index)
         {
-            
+            var randomPosition = Vector3.zero;
+            try
+            {
+                randomPosition = GetRandomPosition();
+            }
+            catch (UnityException)
+            {
+                throw;
+            }
+
+            CardData data = new CardData()
+            {
+                id = index,
+                sprite = Data.Tarjetas[index],
+                position = randomPosition
+            };
+
+            var tarjeta = Instantiate(TarjetaPrefab, Vector3.zero, Quaternion.identity, TarjetasContainer);
+            tarjeta.Initialize(data);
+            return tarjeta;
+        }
+
+        public List<CardPosition> AvailableList;
+
+        private Vector3 GetRandomPosition()
+        {
+            AvailableList = TarjetasPositions.FindAll(t => t.Available);
+
+            if (AvailableList.Count == 0)
+            {
+                throw new UnityException();
+            }
+
+            var cardPosition = AvailableList.ElementAt(UnityEngine.Random.Range(0, AvailableList.Count));
+            cardPosition.Available = false;
+
+            return cardPosition.transform.position;
+        }
+
+        public void LevelStart()
+        {
+            foreach (var tarjeta in Tarjetas)
+            {
+                tarjeta.Flip();
+            }
         }
     }
 }

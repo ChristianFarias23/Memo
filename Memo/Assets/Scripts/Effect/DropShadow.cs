@@ -5,6 +5,8 @@ namespace Memo.Effects
     [RequireComponent(typeof(SpriteRenderer))]
     public class DropShadow : MonoBehaviour
     {
+        [HideInInspector]
+        public Vector2 OriginalShadowOffset;
         public Vector2 ShadowOffset;
         public Material ShadowMaterial;
 
@@ -13,6 +15,7 @@ namespace Memo.Effects
 
         void Start()
         {
+            OriginalShadowOffset = ShadowOffset;
             spriteRenderer = GetComponent<SpriteRenderer>();
 
             //create a new gameobject to be used as drop shadow
