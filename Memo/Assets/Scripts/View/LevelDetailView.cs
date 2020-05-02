@@ -33,7 +33,8 @@ namespace Memo.View
             Titulo.text = Data.Titulo;
             Subtitulo.text = Data.Subtitulo;
             CantidadTarjetas.text = string.Format("Cantidad de tarjetas: {0}", (Data.Tarjetas.Count * 2));
-            RecordActual.text = string.Format("Record actual: {0}", "PLACEHOLDER");
+            RecordActual.text = Data.recordTimeSeconds != Data.defaultRecordTimeSeconds ? 
+                "Tiempo Record: " + TransientController.GetParsedSeconds(Data.recordTimeSeconds) : "Sin tiempo record";
             
             if (Data.Tarjetas == null || Data.Tarjetas.Count == 0)
             {

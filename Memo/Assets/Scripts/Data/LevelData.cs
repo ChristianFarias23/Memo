@@ -29,6 +29,12 @@ namespace Memo.Data
 		[Range(0, 3)]
 		public int CantidadTarjetasTrampa = 0;
 
+
+
+		public float recordTimeSeconds;
+		public float defaultRecordTimeSeconds;
+
+
         public static Color NoDataColor = new Color(0.7607844F, 0.7607844F, 0.7607844F);
 	}
 }

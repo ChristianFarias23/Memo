@@ -14,6 +14,7 @@ MonoBehaviour:
   Titulo: Nivel 5
   Subtitulo: Work in progress...
   Color: {r: 1, g: 0.07058823, b: 0.31035554, a: 1}
-  CantidadTarjetas: 10
   Tarjetas: []
   CantidadTarjetasTrampa: 1
+  recordTimeSeconds: 240
+  defaultRecordTimeSeconds: 240

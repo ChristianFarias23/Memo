@@ -26,8 +26,12 @@ namespace Memo.Controller
         
         public Animator LevelCanvasAnimator;
         public Text PauseLevelTitle;
+        public Text CompletedLevelTitle;
+        public Text TotalTimeText;
         public ParticleSystem ParticleSystemCorrecto;
         public ParticleSystem ParticleSystemIncorrecto;
+
+        public Timer Timer;
 
         private void Awake()
         {
@@ -44,6 +48,7 @@ namespace Memo.Controller
             }
 
             PauseLevelTitle.text = Data.Titulo;
+            CompletedLevelTitle.text = Data.Titulo;
 
             for (int i = 0; i < Data.Tarjetas.Count; i++)
             {
@@ -187,8 +192,7 @@ namespace Memo.Controller
             {
                 Debug.Log("ALL CARDS COMPLETED");
                 yield return new WaitForSeconds(1f);
-                allCompleted = true;
-                LevelCanvasAnimator.SetTrigger("level_complete");
+                LevelCompleted();
             }            
 
             lockAllCompleted = false;
@@ -201,6 +205,24 @@ namespace Memo.Controller
             {
                 tarjeta.Flip();
             }
+        }
+
+        public void LevelCompleted()
+        {
+            allCompleted = true;
+            Timer.PauseTimer();
+
+            string totalTime = TransientController.GetParsedSeconds(Timer.Seconds);
+
+            // Nuevo Record:
+            if (Timer.Seconds < Data.recordTimeSeconds)
+            {
+                Data.recordTimeSeconds = Timer.Seconds;
+                totalTime += "\nNuevo Record!";
+            }
+
+            TotalTimeText.text = totalTime;
+            LevelCanvasAnimator.SetTrigger("level_complete");
         }
     }
 }
