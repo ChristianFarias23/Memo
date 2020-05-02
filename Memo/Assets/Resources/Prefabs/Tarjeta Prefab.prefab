@@ -160,7 +160,8 @@ MonoBehaviour:
   Simbolo: {fileID: 212631345908350058}
   Animator: {fileID: 95929261852195784}
   Shadow: {fileID: 114973938386139986}
-  flipped: 1
+  completed: 0
+  flipped: 0
 --- !u!114 &114973938386139986
 MonoBehaviour:
   m_ObjectHideFlags: 1

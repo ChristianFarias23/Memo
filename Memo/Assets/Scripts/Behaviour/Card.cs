@@ -1,3 +1,4 @@
+using Memo.Controller;
 using Memo.Data;
 using Memo.Effects;
 using UnityEngine;
@@ -13,15 +14,15 @@ namespace Memo.Behaviour
         public Animator Animator;
         public DropShadow Shadow;
 
+        public bool completed = false;
         public bool flipped = true;
 
         public void Initialize(CardData data)
         {
             Data = data;
-            
+
             Simbolo.sprite = Data.sprite;
             transform.position = Data.position;
-            this.Flip();
         }
 
         private void OnMouseDown()
@@ -32,7 +33,17 @@ namespace Memo.Behaviour
                 return;
             }
 
-            Flip();
+            if (completed)
+            {
+                Debug.Log("Is completed");
+                return;
+            }
+
+            if (LevelController.instance.NotifyFlipCard(this))
+            {
+                Debug.Log("Can Flip");
+                Flip();
+            }
         }
 
         public void Flip()
@@ -47,6 +58,11 @@ namespace Memo.Behaviour
             }
             
             flipped = !flipped;
+        }
+
+        public void Complete()
+        {
+            Animator.SetTrigger("card_complete");
         }
     }
 }
