@@ -16,6 +16,8 @@ namespace Memo.View
             instance = this;
         }
 
+        public Sprite DefaultIfEmptySprite;
+
         public LevelData Data;
         public Text Titulo, Subtitulo;
         public Text CantidadTarjetas, RecordActual;
@@ -44,8 +46,15 @@ namespace Memo.View
             // El minimo de tarjetas = La cantidad de tarjetas que se muestran en la preview (3).
             for (int i = 0; i < 3; i++)
             {
-                PreviewTarjetas[i].sprite = Data.Tarjetas[i] ?? null;
-            }            
+                if (Data.Tarjetas.Count - 1 >= i)
+                {
+                    PreviewTarjetas[i].sprite = Data.Tarjetas[i];
+                }
+                else
+                {
+                    PreviewTarjetas[i].sprite = DefaultIfEmptySprite;
+                }
+            }
         }
     }
 }

@@ -9,15 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddb11f672556be444a11fa2b0ccfe48a, type: 3}
-  m_Name: Level 1
+  m_Name: Level 6
   m_EditorClassIdentifier: 
-  Titulo: 1. A desayunar!
-  Subtitulo: Hay que empezar el dia con energia!
+  Titulo: 6. Videojuegos
+  Subtitulo: A jugar!
   Color: {r: 1, g: 0.7647059, b: 0.07058824, a: 1}
   Tarjetas:
-  - {fileID: 21300000, guid: f464f36e33c384047a7ceeb2681584db, type: 3}
-  - {fileID: 21300000, guid: cab67df43ef70d848abf8b88058e4dd6, type: 3}
-  - {fileID: 21300000, guid: f102a76653841a54fb62c910fa8acc5d, type: 3}
+  - {fileID: 21300000, guid: 5a8d31b56ff6b1a4b826e34105500861, type: 3}
+  - {fileID: 21300000, guid: 475097f3715923047864a51bc0e297f3, type: 3}
+  - {fileID: 21300000, guid: e9ade32ce38568b4aa62d5d913ad1472, type: 3}
+  - {fileID: 21300000, guid: 2a76a83accdd30b49bd67ad611d491d4, type: 3}
+  - {fileID: 21300000, guid: ab40c05e970364e489324904b6b7ecce, type: 3}
   CantidadTarjetasTrampa: 1
-  recordTimeSeconds: 240
+  recordTimeSeconds: 19.154896
   defaultRecordTimeSeconds: 240

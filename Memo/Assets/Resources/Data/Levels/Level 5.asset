@@ -11,10 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb11f672556be444a11fa2b0ccfe48a, type: 3}
   m_Name: Level 5
   m_EditorClassIdentifier: 
-  Titulo: Nivel 5
-  Subtitulo: Work in progress...
+  Titulo: 5. Almuerzo
+  Subtitulo: Preparando algo rico!
   Color: {r: 1, g: 0.07058823, b: 0.31035554, a: 1}
-  Tarjetas: []
+  Tarjetas:
+  - {fileID: 21300000, guid: b1fc87581ae0a0b4895929268d7ae8b6, type: 3}
+  - {fileID: 21300000, guid: c91035f2686ae4342afb1adb61e6041d, type: 3}
+  - {fileID: 21300000, guid: 1ce6fb8655ef4ad4b9a358cadbcc4799, type: 3}
+  - {fileID: 21300000, guid: a5162f765c4c03a4da12622521efdc15, type: 3}
+  - {fileID: 21300000, guid: ae41bfe73db8a864aba235a58a0b387e, type: 3}
   CantidadTarjetasTrampa: 1
-  recordTimeSeconds: 240
+  recordTimeSeconds: 16.699886
   defaultRecordTimeSeconds: 240
