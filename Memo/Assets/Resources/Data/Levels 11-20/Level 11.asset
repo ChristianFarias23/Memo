@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb11f672556be444a11fa2b0ccfe48a, type: 3}
+  m_Name: Level 11
+  m_EditorClassIdentifier: 
+  Titulo: 11. Bajo del mar
+  Subtitulo: Vives contenta, siendo sirena
+  Color: {r: 1, g: 0.7647059, b: 0.07058824, a: 1}
+  Tarjetas:
+  - {fileID: 21300000, guid: 3a136220a1a7ee842a0b28afd58cd2e5, type: 3}
+  - {fileID: 21300000, guid: 00f2de2c1962be847b041dde8fe56465, type: 3}
+  - {fileID: 21300000, guid: d6ddf298d46cb06448deec08390480ea, type: 3}
+  - {fileID: 21300000, guid: 6d21b7fd788a5fa47a93715329506abf, type: 3}
+  CantidadTarjetasTrampa: 0
+  recordTimeSeconds: 240
+  defaultRecordTimeSeconds: 240

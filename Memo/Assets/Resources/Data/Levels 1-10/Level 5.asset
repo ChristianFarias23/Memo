@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Titulo: 5. Almuerzo
   Subtitulo: Preparando algo rico!
-  Color: {r: 1, g: 0.07058823, b: 0.31035554, a: 1}
+  Color: {r: 0.96862745, g: 0.62352943, b: 0.12156863, a: 1}
   Tarjetas:
   - {fileID: 21300000, guid: b1fc87581ae0a0b4895929268d7ae8b6, type: 3}
   - {fileID: 21300000, guid: c91035f2686ae4342afb1adb61e6041d, type: 3}
