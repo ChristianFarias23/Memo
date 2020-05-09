@@ -21,5 +21,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2a76a83accdd30b49bd67ad611d491d4, type: 3}
   - {fileID: 21300000, guid: ab40c05e970364e489324904b6b7ecce, type: 3}
   CantidadTarjetasTrampa: 1
-  recordTimeSeconds: 19.154896
+  recordTimeSeconds: 240
   defaultRecordTimeSeconds: 240

@@ -203,6 +203,7 @@ namespace Memo.Controller
         {
             foreach (var tarjeta in Tarjetas)
             {
+                tarjeta.started = true;
                 tarjeta.Flip();
             }
         }

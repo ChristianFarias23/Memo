@@ -14,5 +14,10 @@ namespace Memo.Controller
         {
             SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
         }
+
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
 }
