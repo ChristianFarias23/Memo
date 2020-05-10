@@ -5584,6 +5584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data: {fileID: 0}
   SceneController: {fileID: 662957749}
+  AudioController: {fileID: 0}
   TarjetaPrefab: {fileID: 114270897298870982, guid: 19c47248c8b81f9488cb9d8f000ccc8b,
     type: 2}
   TarjetasContainer: {fileID: 2042517824}
@@ -10817,6 +10818,17 @@ MonoBehaviour:
           m_StringArgument: level_exit
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 662957749}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1090772004
@@ -11740,15 +11752,15 @@ MonoBehaviour:
           m_StringArgument: player_start
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 662957751}
-        m_MethodName: StartTimer
-        m_Mode: 1
+      - m_Target: {fileID: 662957749}
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -11930,8 +11942,19 @@ MonoBehaviour:
           m_StringArgument: pause_close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 662957751}
-        m_MethodName: StartTimer
+      - m_Target: {fileID: 662957749}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 662957750}
+        m_MethodName: LevelUnpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12152,8 +12175,19 @@ MonoBehaviour:
           m_StringArgument: pause_open
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 662957751}
-        m_MethodName: PauseTimer
+      - m_Target: {fileID: 662957749}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 662957750}
+        m_MethodName: LevelPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12393,7 +12427,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.65625
+  orthographic size: 5.5520835
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12735,6 +12769,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: level_exit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 662957749}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

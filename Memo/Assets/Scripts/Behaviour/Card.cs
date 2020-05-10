@@ -68,12 +68,15 @@ namespace Memo.Behaviour
             }
             
             flipped = !flipped;
+            LevelController.instance.Play("Flip " + UnityEngine.Random.Range(1, 5));
         }
 
         public void Complete()
         {
             Animator.SetTrigger("card_complete");
             completed = true;
+
+            LevelController.instance.Play("Slide " + UnityEngine.Random.Range(1, 6));
         }
     }
 }

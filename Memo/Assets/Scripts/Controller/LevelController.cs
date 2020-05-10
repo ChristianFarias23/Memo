@@ -16,6 +16,7 @@ namespace Memo.Controller
 
 
         public SceneController SceneController;
+        public AudioController AudioController;
 
 
         public Card TarjetaPrefab;
@@ -41,6 +42,7 @@ namespace Memo.Controller
         private void Start()
         {
             Data = TransientController.instance.CurrentLevel;
+            AudioController = GameObject.FindObjectOfType<AudioController>();
 
             if (Data == null)
             {
@@ -149,6 +151,11 @@ namespace Memo.Controller
             return false;
         }
 
+        public void Play(string audioName)
+        {
+            AudioController.Play(audioName);
+        }
+
         bool lockCheckCompletePair = false;
         IEnumerator CheckCompletePair()
         {
@@ -206,6 +213,28 @@ namespace Memo.Controller
                 tarjeta.started = true;
                 tarjeta.Flip();
             }
+
+            Timer.StartTimer();
+        }
+
+        public void LevelPause()
+        {
+            foreach (var tarjeta in Tarjetas)
+            {
+                tarjeta.started = false;
+            }
+
+            Timer.PauseTimer();
+        }
+
+        public void LevelUnpause()
+        {
+            foreach (var tarjeta in Tarjetas)
+            {
+                tarjeta.started = true;
+            }
+
+            Timer.StartTimer();
         }
 
         public void LevelCompleted()
